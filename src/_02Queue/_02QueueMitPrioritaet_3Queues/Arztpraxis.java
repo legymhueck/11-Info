@@ -1,5 +1,7 @@
 package _02Queue._02QueueMitPrioritaet_3Queues;
 
+import _00NRW.Queue;
+
 public class Arztpraxis {
     private Queue<Patient> warteSchlange1;
     private Queue<Patient> warteSchlange2;
@@ -22,7 +24,6 @@ public class Arztpraxis {
 
         Patient p = patient_aufrufen();
         System.out.println("Der nächste bitte: " + p.toString());
-
     }
 
     public void patient_anmelden(String pVorname, String pNachname, int pPrioritaet) {

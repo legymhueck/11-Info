@@ -1,5 +1,7 @@
 package _02Queue._01QueueOhnePrioritaet_1Queue;
 
+import _00NRW.Queue;
+
 public class Arztpraxis {
     private Queue<Patient> warteSchlange;
 
