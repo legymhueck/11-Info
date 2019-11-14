@@ -24,7 +24,7 @@ public class Patient {
     }
 
     public String toString() {
-        return vorname + ", " + nachname + " (" + prioritaet + ")";
+        return vorname + " " + nachname + " (" + prioritaet + ")";
     }
 
 

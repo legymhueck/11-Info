@@ -19,11 +19,11 @@ public class Arztpraxis {
         patient_anmelden("Sanders-Edel", "Gundi", 3);
         patient_anmelden("Schneider", "Felix", 1);
 
-        System.out.println("Die Warteschlange:");
+        System.out.println("Die Warteschlange:\n");
         print();
 
         Patient p = patient_aufrufen();
-        System.out.println("Der nächste bitte: " + p.toString());
+        System.out.println("\nDer nächste bitte: " + p.toString());
     }
 
     public void patient_anmelden(String pVorname, String pNachname, int pPrioritaet) {
@@ -59,12 +59,10 @@ public class Arztpraxis {
         System.out.println("Patienten der Priorität 1:");
         printQueue(warteSchlange1);
 
-        System.out.println("");
-        System.out.println("Patienten der Priorität 2:");
+        System.out.println("\nPatienten der Priorität 2:");
         printQueue(warteSchlange2);
 
-        System.out.println("");
-        System.out.println("Patienten der Priorität 3:");
+        System.out.println("\nPatienten der Priorität 3:");
         printQueue(warteSchlange3);
     }
 
