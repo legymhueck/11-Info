@@ -40,14 +40,20 @@ public class Arztpraxis {
         Queue<Patient> tmp = new Queue<>();
         // Queue leeren und in temp-Queue kopieren
         while (!warteSchlange.isEmpty()) {
+            // Patient speichern
             Patient p = warteSchlange.front();
+            // Patient vorne entfernen
             warteSchlange.dequeue();
-
+            // Patient ausdrucken
             System.out.println(p.toString());
-
+            // Patient in die temporäre Warteschlange einfügen.
             tmp.enqueue(p);
         }
-        // tmp-Queue wieder zurück in die leere Originalqueue kopieren
+        /**
+         * Nach der while-Schleife ist die Original-Queue leer und die tmp-Queue voll
+         * Die tmp-Queue wird wieder zurück in die leere Originalqueue kopiert
+         *
+         */
         while (!tmp.isEmpty()) {
             Patient p = tmp.front();
             tmp.dequeue();
