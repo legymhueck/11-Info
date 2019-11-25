@@ -1,6 +1,6 @@
-package _02Queue._02QueueMitPrioritaet_3Queues;
+package lehnen._02Queue._02QueueMitPrioritaet_3Queues;
 
-import _00NRW.Queue;
+import lehnen._00NRW.Queue;
 
 public class Arztpraxis {
     private Queue<Patient> warteSchlange1;

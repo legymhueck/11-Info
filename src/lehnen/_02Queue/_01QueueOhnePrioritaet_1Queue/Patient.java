@@ -1,4 +1,4 @@
-package _02Queue._02QueueMitPrioritaet_3Queues;
+package lehnen._02Queue._01QueueOhnePrioritaet_1Queue;
 
 public class Patient {
     private String vorname;
@@ -26,4 +26,6 @@ public class Patient {
     public String toString() {
         return vorname + " " + nachname + " (" + prioritaet + ")";
     }
+
+
 }

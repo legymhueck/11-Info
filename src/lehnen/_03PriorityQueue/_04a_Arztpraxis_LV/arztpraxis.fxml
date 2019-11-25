@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0"
+            prefWidth="644.0" style="-fx-background-color: #1A237E;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="lehnen._03PriorityQueue._04a_Arztpraxis_LV.Controller">
+    <children>
+        <AnchorPane layoutX="9.0" layoutY="14.0" prefHeight="143.0" prefWidth="627.0">
+            <children>
+                <TextField fx:id="textPatientAufnahme" layoutX="26.0" layoutY="81.0" onKeyReleased="#checkAufnahme"
+                           prefHeight="25.0" prefWidth="370.0" promptText="Vor- und Nachname des Patienten">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextField>
+                <Label layoutX="26.0" layoutY="14.0" text="Rezeption" textFill="#e8eaf6">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="62.0" text="Name" textFill="#e8eaf6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="405.0" layoutY="58.0" text="Priorität" textFill="#e8eaf6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="textPrioAufnahme" layoutX="405.0" layoutY="81.0" onKeyReleased="#checkAufnahme"
+                           prefHeight="25.0" prefWidth="73.0" promptText="Nr.">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextField>
+                <Button fx:id="buttonInsert" layoutX="491.0" layoutY="83.0" mnemonicParsing="false"
+                        onAction="#addPatient" prefHeight="25.0" prefWidth="129.0"
+                        style="-fx-background-color: #D32F2F;" text="Aufnehmen" textFill="#e8eaf6">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="9.0" layoutY="145.0" prefHeight="270.0" prefWidth="634.0">
+            <children>
+                <Label layoutX="26.0" layoutY="24.0" text="Wartezimmer" textFill="#e8eaf6">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="buttonNext" layoutX="491.0" layoutY="80.0" mnemonicParsing="false"
+                        onAction="#callNextPatient" prefHeight="25.0" prefWidth="129.0"
+                        style="-fx-background-color: #D32F2F;" text="Der Nächste bitte!" textFill="#e8eaf6">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="buttonGo" layoutX="491.0" layoutY="120.0" mnemonicParsing="false"
+                        onAction="#removePatient" prefHeight="25.0" prefWidth="129.0"
+                        style="-fx-background-color: #D32F2F;" text="Patient entfernen" textFill="#e8eaf6">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="buttonClear" layoutX="491.0" layoutY="160.0" mnemonicParsing="false" onAction="#clearAll"
+                        prefHeight="25.0" prefWidth="129.0" style="-fx-background-color: #D32F2F;" text="Alle raus!"
+                        textFill="#e8eaf6">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </Button>
+                <TextArea fx:id="areaPatient" layoutX="26.0" layoutY="80.0" prefHeight="200.0" prefWidth="370.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextArea>
+                <TextArea fx:id="areaPrio" layoutX="405.0" layoutY="80.0" prefHeight="200.0" prefWidth="73.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextArea>
+                <Label layoutX="29.0" layoutY="61.0" text="Name" textFill="#e8eaf6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="409.0" layoutY="61.0" text="Priorität" textFill="#e8eaf6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="9.0" layoutY="415.0" prefHeight="143.0" prefWidth="634.0">
+            <children>
+                <TextField fx:id="textPatientSprechzimmer" layoutX="26.0" layoutY="100.0" prefHeight="25.0"
+                           prefWidth="454.0" promptText="Nächster Patient">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </TextField>
+                <Label layoutX="26.0" layoutY="46.0" text="Sprechzimmer" textFill="#e8eaf6">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="81.0" text="Name" textFill="#e8eaf6">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Label>
+                <Button fx:id="buttonFertig" layoutX="491.0" layoutY="100.0" mnemonicParsing="false"
+                        onAction="#patientHealed" prefHeight="25.0" prefWidth="129.0"
+                        style="-fx-background-color: #D32F2F;" text="Fertig!" textFill="#e8eaf6">
+                    <font>
+                        <Font size="12.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
