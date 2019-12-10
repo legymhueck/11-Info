@@ -92,5 +92,10 @@ public class Controller {
         ta_GleisA.clear();
         ta_GleisB.clear();
         ta_GleisC.clear();
+
+        bh.getA().loeschen();
+        bh.getB().loeschen();
+        bh.getC().loeschen();
+        bh.getD().loeschen();
     }
 }

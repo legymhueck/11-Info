@@ -18,4 +18,10 @@ public class Gleis {
     public String getName() {
         return name;
     }
+
+    public void loeschen() {
+        while (gleis.top() != null){
+            gleis.pop();
+        }
+    }
 }

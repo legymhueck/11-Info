@@ -15,15 +15,15 @@ public class Bahnhof {
     }
 
     public void sortieren() {
-        if(b.getGleis().isEmpty()) {
-            rangieren(a,b);
+        if (b.getGleis().isEmpty()) {
+            rangieren(a, b);
         } else if (a.getGleis().isEmpty()) {
-            rangieren(c,b);
-        }else if (a.getGleis().top().getNummer()==b.getGleis().top().getNummer()) {
-            rangieren(a,b);
-        } else if (a.getGleis().top().getNummer()<b.getGleis().top().getNummer()) {
-            rangieren(b,c);
-        } else if (a.getGleis().top().getNummer()>b.getGleis().top().getNummer()) {
+            rangieren(c, b);
+        } else if (a.getGleis().top().getNummer() == b.getGleis().top().getNummer()) {
+            rangieren(a, b);
+        } else if (a.getGleis().top().getNummer() < b.getGleis().top().getNummer()) {
+            rangieren(b, c);
+        } else if (a.getGleis().top().getNummer() > b.getGleis().top().getNummer()) {
             if (c.getGleis().isEmpty()) {
                 rangieren(a, c);
             } else if (a.getGleis().top().getNummer() < c.getGleis().top().getNummer()) {
