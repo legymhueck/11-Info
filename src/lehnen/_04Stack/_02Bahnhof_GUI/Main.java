@@ -1,4 +1,4 @@
-package lehnen._04Stack._01Bahnhof;
+package lehnen._04Stack._02Bahnhof_GUI;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
