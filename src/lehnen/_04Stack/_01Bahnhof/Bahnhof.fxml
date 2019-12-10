@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lehnen._04Stack._01Bahnhof.Controller">
+    <children>
+        <Label alignment="CENTER" layoutY="14.0" prefHeight="23.0" prefWidth="500.0" text="Bahnhof" textAlignment="CENTER" underline="true">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="30.0" layoutY="50.0" prefWidth="100.0" text="Gleis A" />
+        <Label alignment="CENTER" layoutX="200.0" layoutY="50.0" prefHeight="17.0" prefWidth="100.0" text="Gleis B" />
+        <Label alignment="CENTER" layoutX="370.0" layoutY="50.0" prefWidth="100.0" text="Gleis C" />
+        <TextField fx:id="tf_Wagon" layoutX="209.0" layoutY="291.0" prefHeight="25.0" prefWidth="82.0" />
+        <TextArea fx:id="ta_GleisA" editable="false" layoutX="30.0" layoutY="73.0" prefHeight="200.0" prefWidth="100.0" wrapText="true" />
+        <TextArea fx:id="ta_GleisB" editable="false" layoutX="200.0" layoutY="73.0" prefHeight="200.0" prefWidth="100.0" wrapText="true" />
+        <TextArea fx:id="ta_GleisC" editable="false" layoutX="370.0" layoutY="73.0" prefHeight="200.0" prefWidth="100.0" wrapText="true" />
+        <Button fx:id="b_sortieren" layoutX="130.0" layoutY="337.0" mnemonicParsing="false" onAction="#oa_sortieren" prefWidth="80.0" text="sortieren" />
+        <Button fx:id="b_einzelnt" layoutX="30.0" layoutY="337.0" mnemonicParsing="false" onAction="#oa_einzeln" prefWidth="80.0" text="einzeln" />
+        <Button fx:id="b_hinzufuegen" layoutX="30.0" layoutY="291.0" mnemonicParsing="false" onAction="#oa_hinzufuegen" text="Wagon-Nr. hinzufügen" />
+        <Button fx:id="b_anzeigen" layoutX="232.0" layoutY="337.0" mnemonicParsing="false" onAction="#oa_anzeigen" prefWidth="80.0" text="anzeigen" />
+        <Button layoutX="330.0" layoutY="337.0" mnemonicParsing="false" onAction="#oa_loeschen" prefWidth="80.0" text="löschen" />
+    </children>
+</AnchorPane>
