@@ -1,7 +1,7 @@
 package lehnen._02Queue._05Marius_MitPrioritaet_3Queues;
 
 
-import lehnen._00NRW.Queue;
+import lehnen._00Material._01NRW.Queue;
 
 public class Arztpraxis {
     private Queue<Patient> warteSchlange1;

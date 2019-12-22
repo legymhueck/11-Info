@@ -1,4 +1,4 @@
-package lehnen._00NRW;
+package lehnen._00Material._01NRW;
 
 /**
  * <p>
