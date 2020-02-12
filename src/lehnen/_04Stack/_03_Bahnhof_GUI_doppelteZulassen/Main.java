@@ -1,4 +1,4 @@
-package lehnen._04Stack._03_Bahnhof_GUI_modified;
+package lehnen._04Stack._03_Bahnhof_GUI_doppelteZulassen;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

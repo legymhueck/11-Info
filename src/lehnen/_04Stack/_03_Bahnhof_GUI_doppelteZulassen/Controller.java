@@ -1,4 +1,4 @@
-package lehnen._04Stack._03_Bahnhof_GUI_modified;
+package lehnen._04Stack._03_Bahnhof_GUI_doppelteZulassen;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -33,14 +33,13 @@ public class Controller {
 
     @FXML
     void oa_hinzufuegen() {
-        if (!tf_Wagon.getText().isEmpty() && !doppelt()) {
+        if (!tf_Wagon.getText().isEmpty()) {
 
             int i = 0;
             boolean bOK = true;
             try {
                 i = Integer.parseInt(tf_Wagon.getText());
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 new Alert(Alert.AlertType.ERROR, "Bitte Integer-Wert eingeben!").show();
                 bOK = false;
             }
@@ -50,9 +49,6 @@ public class Controller {
                 tf_Wagon.clear();
             }
             oa_anzeigen();
-        } else if (doppelt()) {
-            new Alert(Alert.AlertType.ERROR, "Wagon doppelt!").showAndWait();
-            tf_Wagon.clear();
         }
     }
 
@@ -99,29 +95,5 @@ public class Controller {
         bahnhof.getC().loeschen();
 
         oa_anzeigen();
-    }
-
-    public boolean doppelt() {
-        boolean doppelt = false;
-        Stack<Wagon> temp = new Stack<>();
-        while (!bahnhof.getA().istLeer()) {
-            Wagon w = bahnhof.getA().wagonHolen();
-            int nummer = w.getNummer();
-            int eingabe = Integer.parseInt(tf_Wagon.getText());
-            if (nummer == eingabe) {
-                doppelt = true;
-            }
-            bahnhof.getA().wagonHolen();
-            temp.push(w);
-        }
-
-        // 2. Stack wieder zurückschreiben und dabei die einzelnen Wagons ausgeben
-        while (!temp.isEmpty()) {
-            Wagon w = temp.top();
-            temp.pop();
-            bahnhof.getA().wagonAbstellen(w);
-
-        }
-        return doppelt;
     }
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Font?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
             prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="lehnen._04Stack._03_Bahnhof_GUI_modified.Controller">
+            fx:controller="lehnen._04Stack._03_Bahnhof_GUI_doppelteZulassen.Controller">
     <children>
         <Label alignment="CENTER" layoutY="14.0" prefHeight="23.0" prefWidth="500.0" text="Bahnhof"
                textAlignment="CENTER" underline="true">

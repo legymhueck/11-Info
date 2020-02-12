@@ -1,4 +1,4 @@
-package lehnen._04Stack._03_Bahnhof_GUI_modified;
+package lehnen._04Stack._03_Bahnhof_GUI_doppelteZulassen;
 
 public class Bahnhof {
     private Gleis a;
@@ -19,15 +19,15 @@ public class Bahnhof {
 
     public void naechsterSortierSchritt() {
         if (!a.istLeer() &&
-                (b.istLeer() || a.getErsteWagonNummer() > b.getErsteWagonNummer()) &&
-                (c.istLeer() || a.getErsteWagonNummer() < c.getErsteWagonNummer())) {
+                (b.istLeer() || a.getErsteWagonNummer() >= b.getErsteWagonNummer()) &&
+                (c.istLeer() || a.getErsteWagonNummer() <= c.getErsteWagonNummer())) {
             rangiereWagon(a, b);
         } else if (!c.istLeer() &&
-                (a.istLeer() || c.getErsteWagonNummer() < a.getErsteWagonNummer()) &&
-                (b.istLeer() || c.getErsteWagonNummer() > b.getErsteWagonNummer())) {
+                (a.istLeer() || c.getErsteWagonNummer() <= a.getErsteWagonNummer()) &&
+                (b.istLeer() || c.getErsteWagonNummer() >= b.getErsteWagonNummer())) {
             rangiereWagon(c, b);
         } else if (!b.istLeer() &&
-                (!a.istLeer() && b.getErsteWagonNummer() > a.getErsteWagonNummer())) {
+                (!a.istLeer() && b.getErsteWagonNummer() >= a.getErsteWagonNummer())) {
             rangiereWagon(b, c);
         } else if (!a.istLeer()) {
             rangiereWagon(a, c);

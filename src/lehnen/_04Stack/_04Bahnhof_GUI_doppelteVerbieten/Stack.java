@@ -1,4 +1,4 @@
-package lehnen._04Stack._03_Bahnhof_GUI_modified;
+package lehnen._04Stack._04Bahnhof_GUI_doppelteVerbieten;
 
 /**
  * <p>
