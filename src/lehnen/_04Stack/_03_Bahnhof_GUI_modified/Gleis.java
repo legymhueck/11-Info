@@ -11,14 +11,6 @@ public class Gleis {
         name = pName;
     }
 
-    /*public Stack<Wagon> getGleis() {
-        return gleis;
-    }
-
-    public String getName() {
-        return name;
-    }*/
-
     public void loeschen() {
         while (!gleis.isEmpty()){
             gleis.pop();
