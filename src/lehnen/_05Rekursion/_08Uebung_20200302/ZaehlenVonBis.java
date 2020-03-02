@@ -8,7 +8,7 @@
  *  - Wie lautet der Basisfall?
  *  - Was soll sonst geschehen, d. h. wenn der Basisfall nicht zutrifft?
  *
- * Implementiere den iterativen und den relursiven Ansatz!
+ * Implementiere den iterativen und den rekursiven Ansatz!
  */
 package lehnen._05Rekursion._08Uebung_20200302;
 
