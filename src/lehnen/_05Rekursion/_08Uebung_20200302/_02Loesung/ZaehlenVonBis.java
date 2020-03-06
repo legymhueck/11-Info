@@ -1,4 +1,4 @@
-package lehnen._05Rekursion._08Uebung_20200302._02Loeseung;
+package lehnen._05Rekursion._08Uebung_20200302._02Loesung;
 
 public class ZaehlenVonBis {
     public static void main(String[] args) {
