@@ -10,7 +10,7 @@
  *
  * Implementiere den iterativen und den rekursiven Ansatz!
  */
-package lehnen._05Rekursion._08Uebung_20200302;
+package lehnen._05Rekursion._08Uebung_20200302._01Aufgabe;
 
 public class ZaehlenVonBis {
     public static void main(String[] args) {
