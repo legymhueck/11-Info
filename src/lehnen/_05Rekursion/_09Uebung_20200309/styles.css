@@ -1,0 +1,44 @@
+.root {
+    -fx-alignment: center;
+    -fx-spacing: 0.5em;
+}
+
+.textfield {
+    -fx-font-size: 3em;
+    -fx-text-fill: navy;
+    -fx-alignment: center;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+}
+
+.textfieldHBox {
+    -fx-pref-width: 0.8em;
+    -fx-pref-height: 40%;
+    -fx-spacing: 0.5em;
+}
+
+.buttonHBox {
+    -fx-alignment: center;
+    -fx-spacing: 5px;
+}
+
+.textfield:hover {
+    -fx-border-color: red;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+}
+
+.textfield:focused:hover {
+    -fx-background-radius: 2px;
+    -fx-border-radius: 2px;
+    -fx-border-color: red;
+}
+
+.systemfield {
+    -fx-text-fill: black;
+}
+
+.userfield {
+    -fx-text-fill: blue;
+}
