@@ -1,4 +1,4 @@
-package lehnen._05Rekursion._09Uebung_20200309;
+package lehnen._05Rekursion._09Uebung_20200309._01Aufgabe;
 
 public class Board {
     Cell[] row;

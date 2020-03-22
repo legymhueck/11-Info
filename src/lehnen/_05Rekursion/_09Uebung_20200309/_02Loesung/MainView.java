@@ -1,4 +1,4 @@
-package lehnen._05Rekursion._09Uebung_20200309;
+package lehnen._05Rekursion._09Uebung_20200309._02Loesung;
 
 import javafx.application.Application;
 import javafx.event.Event;
@@ -22,7 +22,7 @@ public class MainView extends Application {
     private Scene scene;
     private TextField[] textFieldArray;
     private Board board;
-    private ExecutorService executor;
+    private ExecutorService executor; //= Executors.newCachedThreadPool();
     private Runnable runnableTask;
     boolean bIsIUpating;
 
@@ -43,9 +43,8 @@ public class MainView extends Application {
 
         scene.getStylesheets().add(new URL(String.valueOf(getClass().getResource("styles.css"))).toExternalForm());
 
-        // TextFields
+        // TextField
         createTextFields();
-        // Buttons
         createButtonBoxAndButtons();
 
         pStage.setScene(scene);
@@ -53,6 +52,7 @@ public class MainView extends Application {
     }
 
     public void createTextFields() {
+        //System.out.println("Create Text Fields Start");
         textFieldHBox = new HBox();
         textFieldHBox.getStyleClass().add("textFieldHBox");
         for (int i = 0; i < textFieldArray.length; i++) {
@@ -61,6 +61,7 @@ public class MainView extends Application {
             textFieldHBox.getChildren().add(textFieldArray[i]);
         }
         root.getChildren().add(textFieldHBox);
+        //System.out.println("Create Text Fields End");
     }
 
 
@@ -126,7 +127,7 @@ public class MainView extends Application {
     }
 
     private void solve_recursive() {
-        board.solve_recursive();
+        board.solve_recursive2(0);
         updateView();
     }
 
@@ -176,6 +177,7 @@ public class MainView extends Application {
 
         try {
             if (!bIsIUpating) {
+                //System.out.println("Start update view!");
                 bIsIUpating = true;
 
                 for (int i = 0; i < textFieldArray.length; i++) {
@@ -204,6 +206,8 @@ public class MainView extends Application {
                     e.printStackTrace();
 
                 }
+
+                //System.out.println("Stop update view!");
                 bIsIUpating = false;
             }
         } catch (Exception e) {
@@ -220,6 +224,7 @@ public class MainView extends Application {
             if (change.getControlNewText().matches("[1-9]{0,1}")) {
                 return change;
             } else {
+                System.out.println("Textfield null");
                 return null;
             }
         }));
@@ -233,6 +238,7 @@ public class MainView extends Application {
         if (event.getSource().getClass() == TextField.class) {
             TextField tf = (TextField) event.getSource();
 
+            System.out.println("onTextfieldChanged: " + tf.getId());
             int pos = Integer.parseInt(tf.getId());
 
             String strText = tf.getText();
