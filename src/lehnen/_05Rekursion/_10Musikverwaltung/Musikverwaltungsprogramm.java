@@ -1,4 +1,4 @@
-package lehnen._05Rekursion._10SuchenIterativ.Musikverwaltung;
+package lehnen._05Rekursion._10Musikverwaltung;
 
 import lehnen._00Material._01NRW.List;
 

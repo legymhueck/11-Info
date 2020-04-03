@@ -1,4 +1,4 @@
-package lehnen._05Rekursion._10SuchenIterativ.Musikverwaltung;
+package lehnen._05Rekursion._10Musikverwaltung;
 
 public class Musiktitel {
     private String titel;
