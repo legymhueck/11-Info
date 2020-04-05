@@ -48,7 +48,7 @@ public class SucheRekursiv {
         //       evaluate the binary search
         //   otherwise
         //       return false
-        boolean suchzahlVorhanden = numberToFind < maxNumberInArray ? binaereSucheRek2(testArray, numberToFind, 0, testArray.length) : false;
+        boolean suchzahlVorhanden = binaereSucheRek2(testArray, numberToFind, 0, testArray.length - 1);
         System.out.println("\nSuchzahl " + numberToFind + " vorhanden?: " + suchzahlVorhanden);
     }
 
