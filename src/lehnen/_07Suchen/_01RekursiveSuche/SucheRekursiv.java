@@ -80,20 +80,19 @@ public class SucheRekursiv {
         }
     }
 
-    public boolean binaereSucheRek(int[] pA, int pI, int pLinks, int pRechts) {
-        if (pLinks <= pRechts) {        // Abbruchbedingung: der Start des Suchbereichs ist größer als das Ende
+    public boolean binaereSucheRek(int[] pArray, int pSuchzahl, int pLinks, int pRechts) {
+        if (pLinks <= pRechts) {
             int mitte = (int) ((pLinks + pRechts) / 2);
-            if (pA[mitte] == pI) {              // mitte gibt einen Index zurück, nicht den Wert mit dem verglichen wird
+            if (pArray[mitte] == pSuchzahl) {
                 return true;
             } else {
-                if (pA[mitte] < pI) {           // s.o.: mitte gibt einen Index zurück, nicht den Wert mit dem verglichen wird
+                if (pArray[mitte] < pSuchzahl) {
                     pLinks = mitte + 1;
-                    return binaereSucheRek(pA, pI, pLinks, pRechts);    // gib das Ergebnis der Suche im rechten Teil als Ergebnis zurück
-                } else //if (pA[mitte] > pI) {    // s.o. mitte gibt einen Index zurück, nicht den Wert mit dem verglichen wird + hier reicht nur ein else ohne else if, weil es keinen anderen Fall gibt
+                    return binaereSucheRek(pArray, pSuchzahl, pLinks, pRechts);
+                } else
                     pRechts = mitte - 1;
-                return binaereSucheRek(pA, pI, pLinks, pRechts);        // gib das Ergebnis der Suche im linken Teil als Ergebnis zurück
+                return binaereSucheRek(pArray, pSuchzahl, pLinks, pRechts);
             }
-            // hier kommt man nie hin! Entweder wird return im if-Fall oder im else-Fall aufgerufen
         } else {
             return false;
         }
