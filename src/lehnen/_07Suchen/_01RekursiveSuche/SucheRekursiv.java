@@ -42,13 +42,7 @@ public class SucheRekursiv {
         bubbleSort(testArray);                                                     // sort the array
         System.out.println("\n\nSortiertesArray:\n" + Arrays.toString(testArray)); // print the sorted array
 
-        // search for numberToFind
-        // the following shorthand for an if statement means:
-        //   if the number you're looking for in the array is smaller than the maximum number in the sorted array
-        //       evaluate the binary search
-        //   otherwise
-        //       return false
-        boolean suchzahlVorhanden = binaereSucheRek2(testArray, numberToFind, 0, testArray.length - 1);
+        boolean suchzahlVorhanden = binaereSucheRek_LE(testArray, numberToFind, 0, testArray.length - 1);
         System.out.println("\nSuchzahl " + numberToFind + " vorhanden?: " + suchzahlVorhanden);
     }
 
@@ -86,7 +80,7 @@ public class SucheRekursiv {
         }
     }
 
-    public boolean binaereSucheRek(int[] pArray, int pSuchzahl, int pLinks, int pRechts) {
+    public boolean binaereSucheRek_MarBoe(int[] pArray, int pSuchzahl, int pLinks, int pRechts) {
         if (pLinks <= pRechts) {
             int mitte = (int) ((pLinks + pRechts) / 2);
             if (pArray[mitte] == pSuchzahl) {
@@ -94,17 +88,17 @@ public class SucheRekursiv {
             } else {
                 if (pArray[mitte] < pSuchzahl) {
                     pLinks = mitte + 1;
-                    return binaereSucheRek(pArray, pSuchzahl, pLinks, pRechts);
+                    return binaereSucheRek_MarBoe(pArray, pSuchzahl, pLinks, pRechts);
                 } else
                     pRechts = mitte - 1;
-                return binaereSucheRek(pArray, pSuchzahl, pLinks, pRechts);
+                return binaereSucheRek_MarBoe(pArray, pSuchzahl, pLinks, pRechts);
             }
         } else {
             return false;
         }
     }
 
-    public boolean binaereSucheRek2(int[] pArray, int pSuchzahl, int pLinks, int pRechts) {
+    public boolean binaereSucheRek_LE(int[] pArray, int pSuchzahl, int pLinks, int pRechts) {
         if (pLinks > pRechts) {
             return false;
         }
@@ -112,9 +106,9 @@ public class SucheRekursiv {
         if (pArray[mitte] == pSuchzahl) {
             return true;
         } else if (pSuchzahl < pArray[mitte]) {
-            return binaereSucheRek2(pArray, pSuchzahl, pLinks, mitte -1);
+            return binaereSucheRek_LE(pArray, pSuchzahl, pLinks, mitte -1);
         } else {
-            return binaereSucheRek2((pArray), pSuchzahl, mitte + 1, pRechts);
+            return binaereSucheRek_LE((pArray), pSuchzahl, mitte + 1, pRechts);
         }
     }
 }
