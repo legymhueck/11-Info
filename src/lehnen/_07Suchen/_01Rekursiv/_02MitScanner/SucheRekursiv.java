@@ -4,7 +4,7 @@
  *  - Zudem werden min und max vorkommender Integerwerte festgelegt.
  *
  */
-package lehnen._07Suchen._01RekursiveSuche;
+package lehnen._07Suchen._01Rekursiv._02MitScanner;
 
 /**
  * Diese Klasse sucht rekursiv nach einer Zahl in
@@ -22,7 +22,7 @@ public class SucheRekursiv {
         System.out.println("Es wird ein benutzerdefiniertes Array erzeugt.\nDer Benutzer legt Größe und Zahlenraum (min - max) fest.");
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("\nWie viele Indizes soll das Array haben?: ");
+        System.out.print("\nWie viele Indexe soll das Array haben?: ");
         int arraySize = scanner.nextInt();
 
         System.out.print("\nWie groß soll der Zahlenraum sein?: ");
