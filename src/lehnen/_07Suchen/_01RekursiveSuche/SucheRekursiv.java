@@ -6,6 +6,12 @@
  */
 package lehnen._07Suchen._01RekursiveSuche;
 
+/**
+ * Diese Klasse sucht rekursiv nach einer Zahl in
+ *  - einem Array, dessen Größe selbst festgelegt wird.
+ *  - Zudem werden min und max vorkommender Integerwerte festgelegt.
+ *
+ */
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -42,7 +48,7 @@ public class SucheRekursiv {
         //       evaluate the binary search
         //   otherwise
         //       return false
-        boolean suchzahlVorhanden = numberToFind < maxNumberInArray ? binaereSucheRek(testArray, numberToFind, 0, testArray.length) : false;
+        boolean suchzahlVorhanden = numberToFind < maxNumberInArray ? binaereSucheRek2(testArray, numberToFind, 0, testArray.length) : false;
         System.out.println("\nSuchzahl " + numberToFind + " vorhanden?: " + suchzahlVorhanden);
     }
 
@@ -95,6 +101,20 @@ public class SucheRekursiv {
             }
         } else {
             return false;
+        }
+    }
+
+    public boolean binaereSucheRek2(int[] pArray, int pSuchzahl, int pLinks, int pRechts) {
+        if (pLinks > pRechts) {
+            return false;
+        }
+        int mitte = (int) ((pRechts + pLinks) / 2);
+        if (pArray[mitte] == pSuchzahl) {
+            return true;
+        } else if (pSuchzahl < pArray[mitte]) {
+            return binaereSucheRek2(pArray, pSuchzahl, pLinks, mitte -1);
+        } else {
+            return binaereSucheRek2((pArray), pSuchzahl, mitte + 1, pRechts);
         }
     }
 }
