@@ -6,12 +6,6 @@
  */
 package lehnen._07Suchen._01Rekursiv._02MitScanner;
 
-/**
- * Diese Klasse sucht rekursiv nach einer Zahl in
- *  - einem Array, dessen Größe selbst festgelegt wird.
- *  - Zudem werden min und max vorkommender Integerwerte festgelegt.
- *
- */
 import java.util.Arrays;
 import java.util.Scanner;
 
