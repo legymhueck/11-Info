@@ -1,4 +1,4 @@
-package lehnen._06Sortieren._02String;
+package lehnen._06Sortieren._01BubbleSort._02String;
 
 import java.util.Arrays;
 

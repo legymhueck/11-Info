@@ -1,4 +1,4 @@
-package lehnen._06Sortieren._03Objekte;
+package lehnen._06Sortieren._01BubbleSort._03Objekte;
 
 public class Auto {
     private String marke;
