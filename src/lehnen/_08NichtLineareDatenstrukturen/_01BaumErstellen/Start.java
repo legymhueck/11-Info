@@ -24,8 +24,8 @@ public class Start {
 
     /**
      * Wichtig:
-     *  - Baum VON UNTEN NACH OBEN aufbauen
-     *  - wenn man von oben nach unten aufbaut, hätte man noch keine Teilbäume und Kinder, die man anfügen könnte
+     * - Baum VON UNTEN NACH OBEN aufbauen
+     * - wenn man von oben nach unten aufbaut, hätte man noch keine Teilbäume und Kinder, die man anfügen könnte
      */
     private void erzeugeBaum() {
 
@@ -46,17 +46,18 @@ public class Start {
     }
 
     private void ausgebenPreorderManuell() {
-        System.out.println(wurzel.gibInhalt());
+        System.out.print("Pre-Order-Ausgabe manuell: ");
+        System.out.print(wurzel.gibInhalt() + " ");
 
         // Linker Teilbaum
-        System.out.println(lTb.gibInhalt()); // teilbaum links
-        System.out.println(w_lTb_lTB_null_null.gibInhalt());
-        System.out.println(w_lTb_rTb_null_null.gibInhalt());
+        System.out.print(lTb.gibInhalt() + " "); // teilbaum links
+        System.out.print(w_lTb_lTB_null_null.gibInhalt() + " ");
+        System.out.print(w_lTb_rTb_null_null.gibInhalt() + " ");
 
         // Rechter Teilbaum
-        System.out.println(rTb.gibInhalt()); // teilbaum lechts
-        System.out.println(w_rTb_lTb_null_null.gibInhalt());
-        System.out.println(w_rTb_rTb_null_null.gibInhalt());
+        System.out.print(rTb.gibInhalt() + " "); // teilbaum lechts
+        System.out.print(w_rTb_lTb_null_null.gibInhalt() + " ");
+        System.out.print(w_rTb_rTb_null_null.gibInhalt() + " ");
     }
 
     public static void main(String[] args) {
