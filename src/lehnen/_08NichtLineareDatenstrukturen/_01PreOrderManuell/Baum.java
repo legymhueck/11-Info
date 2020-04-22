@@ -1,4 +1,4 @@
-package lehnen._08NichtLineareDatenstrukturen._01BaumErstellen;
+package lehnen._08NichtLineareDatenstrukturen._01PreOrderManuell;
 
 public class Baum<ContentType> {
     private ContentType inhaltsObjekt;
