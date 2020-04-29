@@ -1,4 +1,5 @@
 package lehnen._08NichtLineareDatenstrukturen._01PreOrderManuell;
+import lehnen._08NichtLineareDatenstrukturen._00BaumKlasse.Baum;
 
 /**
  * Abkürzunden
@@ -7,7 +8,7 @@ package lehnen._08NichtLineareDatenstrukturen._01PreOrderManuell;
  * kLLNN - Kind linker Teilbaum, linker Teilbaum mit leerem Teilbaum links und leerem Teilbaum rechts
  * kLRNN - Kind linker Teilbaum, rechter Teilbaum mit leerem Teilbaum links und leerem Teilbaum rechts
  */
-public class Start {
+public class PreOrderManuell_Start {
     private Baum<Integer> wurzel;
     private Baum<Integer> lTb; // linker Teilbaum
     private Baum<Integer> rTb; // rechter Teilbaum
@@ -17,7 +18,7 @@ public class Start {
     private Baum<Integer> w_rTb_rTb_null_null; // Wurzel, rechter Teilbaum, rechter Tailbaum, beide leeren Teilbäume
 
 
-    public Start() {
+    public PreOrderManuell_Start() {
         erzeugeBaum();
         ausgebenPreorderManuell();
     }
@@ -47,20 +48,20 @@ public class Start {
 
     private void ausgebenPreorderManuell() {
         System.out.print("Pre-Order-Ausgabe manuell: ");
-        System.out.print(wurzel.gibInhalt() + " ");
+        System.out.print(wurzel.getInhalt() + " ");
 
         // Linker Teilbaum
-        System.out.print(lTb.gibInhalt() + " "); // teilbaum links
-        System.out.print(w_lTb_lTB_null_null.gibInhalt() + " ");
-        System.out.print(w_lTb_rTb_null_null.gibInhalt() + " ");
+        System.out.print(lTb.getInhalt() + " "); // teilbaum links
+        System.out.print(w_lTb_lTB_null_null.getInhalt() + " ");
+        System.out.print(w_lTb_rTb_null_null.getInhalt() + " ");
 
         // Rechter Teilbaum
-        System.out.print(rTb.gibInhalt() + " "); // teilbaum lechts
-        System.out.print(w_rTb_lTb_null_null.gibInhalt() + " ");
-        System.out.print(w_rTb_rTb_null_null.gibInhalt() + " ");
+        System.out.print(rTb.getInhalt() + " "); // teilbaum lechts
+        System.out.print(w_rTb_lTb_null_null.getInhalt() + " ");
+        System.out.print(w_rTb_rTb_null_null.getInhalt() + " ");
     }
 
     public static void main(String[] args) {
-        new Start();
+        new PreOrderManuell_Start();
     }
 }
