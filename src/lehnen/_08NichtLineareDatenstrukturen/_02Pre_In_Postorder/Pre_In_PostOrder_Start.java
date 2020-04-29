@@ -1,16 +1,16 @@
-package lehnen._08NichtLineareDatenstrukturen._02Traversierungen;
+package lehnen._08NichtLineareDatenstrukturen._02Pre_In_Postorder;
 
 import lehnen._08NichtLineareDatenstrukturen._00BaumKlasse.BaumBauer_3Ebenen;
 import lehnen._08NichtLineareDatenstrukturen._00BaumKlasse.Baum;
 
-public class Traversierungen_Start {
+public class Pre_In_PostOrder_Start {
     private Baum wurzel;
 
-    public Traversierungen_Start() {
+    public Pre_In_PostOrder_Start() {
         BaumBauer_3Ebenen baumBauer_3Ebenen = new BaumBauer_3Ebenen();
         wurzel = baumBauer_3Ebenen.getWurzel();
 
-        Traversierungen traversierungen = new Traversierungen();
+        Pre_In_PostOrder traversierungen = new Pre_In_PostOrder();
 
         System.out.print("Preorder:\t");
         traversierungen.preorder(wurzel);
@@ -23,7 +23,7 @@ public class Traversierungen_Start {
     }
 
     public static void main(String[] args) {
-        new Traversierungen_Start();
+        new Pre_In_PostOrder_Start();
     }
 
 }

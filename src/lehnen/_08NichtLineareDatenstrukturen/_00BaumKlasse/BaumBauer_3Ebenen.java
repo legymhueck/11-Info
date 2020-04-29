@@ -40,7 +40,6 @@ public class BaumBauer_3Ebenen {
         System.out.println(wLLL.getInhalt());
     }
 
-
     public Baum<Integer> getWurzel() {
         return wurzel;
     }
