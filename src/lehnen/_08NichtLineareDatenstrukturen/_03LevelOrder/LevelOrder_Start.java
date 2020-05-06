@@ -2,7 +2,7 @@ package lehnen._08NichtLineareDatenstrukturen._03LevelOrder;
 
 import lehnen._08NichtLineareDatenstrukturen._00BaumKlasse.BaumBauer_3Ebenen;
 import lehnen._08NichtLineareDatenstrukturen._00BaumKlasse.Baum;
-import resources._01material._01NRW._01Datenstrukturklassen._01Linear.List;
+import resources._01NRW._01Datenstrukturklassen._01Linear.List;
 
 public class LevelOrder_Start {
     private Baum wurzel;

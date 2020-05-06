@@ -1,6 +1,6 @@
 package lehnen._08NichtLineareDatenstrukturen._03LevelOrder;
-import resources._01material._01NRW._01Datenstrukturklassen._01Linear.List;
-import resources._01material._01NRW._01Datenstrukturklassen._01Linear.Queue;
+import resources._01NRW._01Datenstrukturklassen._01Linear.List;
+import resources._01NRW._01Datenstrukturklassen._01Linear.Queue;
 import lehnen._08NichtLineareDatenstrukturen._00BaumKlasse.Baum;
 
 

@@ -1,4 +1,4 @@
-package resources._01material._01NRW._01Datenstrukturklassen._02Baum;
+package resources._01NRW._01Datenstrukturklassen._02Baum;
 
 /**
  * <p>
