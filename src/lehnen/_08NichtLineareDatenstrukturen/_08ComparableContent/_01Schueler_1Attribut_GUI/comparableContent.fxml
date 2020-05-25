@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="250.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lehnen._08NichtLineareDatenstrukturen._08ComparableContent._01Schueler_1Attribut_GUI.Controller">
+   <children>
+      <Label layoutX="136.0" layoutY="10.0" text="Comparable Content">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button layoutX="263.0" layoutY="79.0" mnemonicParsing="false" onAction="#oaIsGreater" prefWidth="80.0" text="isGreater" />
+      <Button layoutX="263.0" layoutY="110.0" mnemonicParsing="false" onAction="#oaIsLess" prefWidth="80.0" text="isLess" />
+      <Button layoutX="263.0" layoutY="144.0" mnemonicParsing="false" onAction="#oaIsEqual" prefWidth="80.0" text="isEqual" />
+      <Button layoutX="432.0" layoutY="189.0" mnemonicParsing="false" onAction="#oaClear" prefWidth="70.0" text="clear" />
+      <TextField fx:id="tfInput1" layoutX="22.0" layoutY="112.0" prefWidth="200.0" />
+      <TextField fx:id="tfInput2" layoutX="377.0" layoutY="110.0" prefWidth="200.0" />
+      <Label fx:id="lOutput" alignment="CENTER" contentDisplay="CENTER" layoutX="222.0" layoutY="188.0" prefHeight="53.0" prefWidth="160.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
