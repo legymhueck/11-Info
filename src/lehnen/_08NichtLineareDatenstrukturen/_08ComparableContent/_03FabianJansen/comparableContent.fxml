@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lehnen._08NichtLineareDatenstrukturen._08ComparableContent._03FabianJansen.Controller">
+    <children>
+        <Button fx:id="b_vorname_greater" layoutX="170.0" layoutY="188.0" mnemonicParsing="false" onAction="#oa_vornamegreater" text="&gt;" />
+        <Button fx:id="b_vorname_equal" layoutX="288.0" layoutY="188.0" mnemonicParsing="false" onAction="#oa_vornameequal" text="=" />
+        <Button fx:id="b_vorname_less" layoutX="396.0" layoutY="188.0" mnemonicParsing="false" onAction="#oa_vornameless" text="&lt;" />
+        <TextField fx:id="tf_vorname1" layoutX="108.0" layoutY="108.0" />
+        <TextField fx:id="tf_nachname1" layoutX="108.0" layoutY="133.0" />
+        <TextField fx:id="tf_klasse1" layoutX="108.0" layoutY="158.0" />
+        <TextField fx:id="tf_vorname2" layoutX="342.0" layoutY="108.0" />
+        <TextField fx:id="tf_nachname2" layoutX="342.0" layoutY="133.0" />
+        <TextField fx:id="tf_klasse2" layoutX="342.0" layoutY="158.0" />
+        <TextArea fx:id="ta_ergebnis" layoutX="200.0" layoutY="251.0" prefHeight="26.0" prefWidth="200.0" />
+        <Text layoutX="152.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schüler1:" />
+        <Text layoutX="389.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schüler2:" />
+        <Text layoutX="200.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ergebnis:" />
+        <Text layoutX="210.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schüler Vergleich">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Text>
+        <Text layoutX="46.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname" />
+        <Text layoutX="276.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname" />
+        <Text layoutX="36.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname" />
+        <Text layoutX="272.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname" />
+        <Text layoutX="63.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klasse" />
+        <Text layoutX="297.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Klasse" />
+    </children>
+</AnchorPane>
