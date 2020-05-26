@@ -1,4 +1,4 @@
-package lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Einfuegen;
+package lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Suchen_Einfuegen_Loeschen;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -29,12 +29,12 @@ public class Controller {
     // -------------------------------------------------
 
     /**
-     * KonstruktoQQQr
+     * Konstruktor
      */
     public Controller() {
         methoden = new Methoden();
         meinSchuelerBaum = new BinaryTree<>();
-        methoden.einfuegen(meinSchuelerBaum, new Schueler("Lehnen", "Michael", "Q1"));
+        methoden.einfuegen(meinSchuelerBaum, new Schueler("Müller", "Heinz", "Q1"));
     }
 
     public void initialize() {

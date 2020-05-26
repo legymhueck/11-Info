@@ -1,4 +1,4 @@
-package lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Einfuegen;
+package lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Suchen_Einfuegen_Loeschen;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

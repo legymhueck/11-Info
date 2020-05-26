@@ -1,4 +1,4 @@
-package lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Einfuegen;
+package lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Suchen_Einfuegen_Loeschen;
 
 import resources._01NRW._01Datenstrukturklassen._02Baum.BinaryTree;
 import lehnen._08NichtLineareDatenstrukturen._08ComparableContent._02Schueler_3Attribute.Schueler;
