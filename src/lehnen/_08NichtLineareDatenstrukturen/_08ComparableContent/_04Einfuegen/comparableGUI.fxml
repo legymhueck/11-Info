@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lehnen._08NichtLineareDatenstrukturen._08ComparableContent._04Einfuegen.Controller">
+    <children>
+        <VBox alignment="CENTER">
+            <children>
+                <VBox>
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label text="Nachname">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="tfNachname" prefWidth="150.0">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                                <Label alignment="CENTER" contentDisplay="CENTER" text="Vorname">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="tfVorname" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                                <Label text="Klasse">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="tfKlasse" prefWidth="50.0">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" top="30.0"/>
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#oaEinfuegen" prefWidth="80.0"
+                                        text="Einfügen">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#oaSuchen" prefWidth="80.0" text="Suchen">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#oaLoeschen" prefWidth="80.0" text="Löschen">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#oaPreOrder" prefWidth="80.0" text="preOrder">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#oaInOrder" prefWidth="80.0" text="inOrder">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#oaPostOrder" text="postOrder">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#oaClear" prefWidth="80.0" text="Clear">
+                                    <HBox.margin>
+                                        <Insets right="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" top="30.0"/>
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <TextArea fx:id="taAusgabe" editable="false" prefHeight="400.0" wrapText="true">
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0"/>
+                            </VBox.margin>
+                        </TextArea>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="30.0"/>
+                    </VBox.margin>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets bottom="30.0"/>
+    </padding>
+</AnchorPane>
