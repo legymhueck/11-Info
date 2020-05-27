@@ -10,7 +10,21 @@ public class Methoden {
     }
 
     public Schueler suchen(BinaryTree<Schueler> pSuchbaum, Schueler pSchueler) {
-        return null; // Bitte anpassen
+        Schueler zuSuchenderSchueler = null;
+        if (!pSuchbaum.isEmpty()) {
+            Schueler tempSchueler = pSuchbaum.getContent();
+            if (pSchueler.isLess(tempSchueler)) {
+                // im linken Teilbaum weiter suchen
+                zuSuchenderSchueler = suchen(pSuchbaum.getLeftTree(), pSchueler);
+            } else if (pSchueler.isGreater(tempSchueler)) {
+                // im rechten Teilbaum weiter suchen
+                zuSuchenderSchueler = suchen(pSuchbaum.getRightTree(), pSchueler);
+            } else if (pSchueler.isEqual(tempSchueler)) {
+                // Schüler wurde gefunden
+                zuSuchenderSchueler = tempSchueler;
+            }
+        }
+        return zuSuchenderSchueler;
     }
 
 
