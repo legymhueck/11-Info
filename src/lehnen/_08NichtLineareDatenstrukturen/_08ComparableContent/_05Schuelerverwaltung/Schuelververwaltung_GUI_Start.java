@@ -229,14 +229,6 @@ public class Schuelververwaltung_GUI_Start extends Application {
         postorder(schuelerverwaltung.getSchuelerBinarySearchTree());
     }
 
-    /*private void benutzerInListeAnzeige(BinarySearchTree<Schueler> pSuchbaum) {
-        if (pSuchbaum != null && pSuchbaum.getContent() != null) {
-            benutzerInListeAnzeige(pSuchbaum.getLeftTree());
-            data.add(pSuchbaum.getContent());
-            benutzerInListeAnzeige(pSuchbaum.getRightTree());
-        }
-    }*/
-
     public void inorder(BinarySearchTree<Schueler> pBaum) { // LWR
         if (pBaum.getLeftTree() != null) {
             inorder(pBaum.getLeftTree());
