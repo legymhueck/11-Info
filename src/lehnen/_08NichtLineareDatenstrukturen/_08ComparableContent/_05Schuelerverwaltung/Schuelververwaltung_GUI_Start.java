@@ -36,12 +36,14 @@ public class Schuelververwaltung_GUI_Start extends Application {
     public Schuelververwaltung_GUI_Start() {
         schuelerverwaltung = new Schuelerverwaltung();
         data = FXCollections.observableArrayList();
+
+
     }
 
     @Override
     public void start(Stage pStage) {
         root = new BorderPane();
-        scene = new Scene(root, 730, 400, Color.BEIGE);
+        scene = new Scene(root, 980, 400, Color.BEIGE);
 
         root.setTop(createTopNodes());
         root.setCenter(createTableView());
@@ -54,12 +56,12 @@ public class Schuelververwaltung_GUI_Start extends Application {
     }
 
     private void generateTestData() {
+        schuelerverwaltung.neuenNutzerAnlegen("Hans", "Meier", "hans.meier@outlook.com");
         schuelerverwaltung.neuenNutzerAnlegen("Adam", "Abels", "adamabels@gmx.net");
         schuelerverwaltung.neuenNutzerAnlegen("Linda", "Heinze", "linda_heinze@web.de");
-        schuelerverwaltung.neuenNutzerAnlegen("Hans", "Meier", "hans.meier@outlook.com");
+        schuelerverwaltung.neuenNutzerAnlegen("Frank", "Zarowski", "frank@zarowski.com");
         schuelerverwaltung.neuenNutzerAnlegen("Eva", "Müller", "eva.mueller@gmail.com");
         schuelerverwaltung.neuenNutzerAnlegen("Luke", "Müller", "luke.mueller@gmail.com");
-        schuelerverwaltung.neuenNutzerAnlegen("Frank", "Zarowski", "frank@zarowski.com");
         inorderAnzeigen();
     }
 
@@ -102,10 +104,11 @@ public class Schuelververwaltung_GUI_Start extends Application {
         Button bRemoveSelectedRow = new Button("Zeile löschen");
         Button bProfilVorhanden = new Button("Profil vorhanden?");
         Button bInorder = new Button("Inorder");
-        Button bPreorder = new Button("PreOrder");
-        Button bPostorder = new Button("PostOrder");
+        Button bPreorder = new Button("Preorder");
+        Button bPostorder = new Button("Postorder");
         Button bClear = new Button("Clear");
         Button bTestData = new Button("Testdaten");
+        Button bBaumZeichnen = new Button("Baum zeichnen");
         Button bExit = new Button("Exit");
 
         /**
@@ -133,7 +136,7 @@ public class Schuelververwaltung_GUI_Start extends Application {
         topTextFields.setSpacing(10);
         topTextFields.setAlignment(Pos.CENTER);
 
-        HBox topButtons = new HBox(bAdd, bRemoveSelectedRow, bProfilVorhanden, bInorder, bPreorder, bPostorder, bClear, bTestData, bExit);
+        HBox topButtons = new HBox(bAdd, bRemoveSelectedRow, bProfilVorhanden, bInorder, bPreorder, bPostorder, bClear, bTestData, bBaumZeichnen, bExit);
         topButtons.setPadding(new Insets(10, 0, 10, 0));
         topButtons.setSpacing(10);
         topButtons.setAlignment(Pos.CENTER);
@@ -176,7 +179,7 @@ public class Schuelververwaltung_GUI_Start extends Application {
                     new Alert(Alert.AlertType.CONFIRMATION, "Profil vorhanden!").showAndWait();
                 } else {
                     tableView.getItems().clear();
-                    new Alert(Alert.AlertType.INFORMATION, "Benutzername nicht vorhanden!").showAndWait();
+                    new Alert(Alert.AlertType.ERROR, "Benutzername NICHT vorhanden!").showAndWait();
                 }
             } else {
                 new Alert(Alert.AlertType.ERROR, "Bitte alle Textfelder ausfüllen!").showAndWait();
@@ -206,12 +209,22 @@ public class Schuelververwaltung_GUI_Start extends Application {
             generateTestData();
         });
 
+        bBaumZeichnen.setOnAction(event -> {
+            baumzeichnen();
+        });
+
         bExit.setOnAction(event -> {
             System.exit(0);
         });
 
         topNodes = new VBox(topTextFields, topButtons);
         return topNodes;
+    }
+
+    private void baumzeichnen() {
+        if (!schuelerverwaltung.getSchuelerBinarySearchTree().isEmpty()) {
+            new BaumZeichner(800, 600, schuelerverwaltung.getSchuelerBinarySearchTree());
+        }
     }
 
     private void inorderAnzeigen() {
