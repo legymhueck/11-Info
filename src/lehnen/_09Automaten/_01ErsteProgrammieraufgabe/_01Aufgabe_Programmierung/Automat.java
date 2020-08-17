@@ -1,5 +1,6 @@
 /**
- * Programmiere den Automaten entsprechend dem Klassendiagramm und Übergangsgraphen
+ * Programmiere den Automaten entsprechend dem Klassendiagramm und Übergangsgraphen.
+ * Beide findest du im Ordner _02Material.
  *
  *  - Benutze switch-Anweisungen
  *  - Benutze ein Scanner-Objekt, durch das Benutzereingaben möglich sind.
