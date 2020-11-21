@@ -6,16 +6,16 @@ import java.sql.*;
 
 /**
  * <p>
- * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2018
+ * Materialien zu den zentralen NRW-Abiturprüfungen im Fach Informatik ab 2018
  * </p>
  * <p>
  * Klasse DatabaseConnector
  * </p>
  * <p>
- * Ein Objekt der Klasse DatabaseConnector ermoeglicht die Abfrage und Manipulation
+ * Ein Objekt der Klasse DatabaseConnector ermöglicht die Abfrage und Manipulation
  * einer MySQL-Datenbank.
  * Beim Erzeugen des Objekts wird eine Datenbankverbindung aufgebaut, so dass
- * anschließend SQL-Anweisungen an diese Datenbank gerichtet werden koennen.
+ * anschließend SQL-Anweisungen an diese Datenbank gerichtet werden können.
  * </p>
  *
  * @author Qualitaets- und UnterstuetzungsAgentur - Landesinstitut fuer Schule
@@ -29,9 +29,9 @@ public class DatabaseConnector {
     /**
      * Ein Objekt vom Typ DatabaseConnector wird erstellt, und eine Verbindung zur Datenbank
      * wird aufgebaut. Mit den Parametern pIP und pPort werden die IP-Adresse und die
-     * Port-Nummer uebergeben, unter denen die Datenbank mit Namen pDatabase zu erreichen ist.
-     * Mit den Parametern pUsername und pPassword werden Benutzername und Passwort fuer die
-     * Datenbank uebergeben.
+     * Port-Nummer übergeben, unter denen die Datenbank mit Namen pDatabase zu erreichen ist.
+     * Mit den Parametern pUsername und pPassword werden Benutzername und Passwort für die
+     * Datenbank übergeben.
      */
     public DatabaseConnector(String pIP, int pPort, String pDatabase, String pUsername, String pPassword) {
         try {
@@ -54,7 +54,7 @@ public class DatabaseConnector {
      * abgerufen werden.
      */
     public void executeStatement(String pSQLStatement) {
-        //Altes Ergebnis loeschen
+        //Altes Ergebnis löschen
         currentQueryResult = null;
         message = null;
 
@@ -71,7 +71,7 @@ public class DatabaseConnector {
                 //Spaltenanzahl ermitteln
                 int columnCount = resultset.getMetaData().getColumnCount();
 
-                //Spaltennamen und Spaltentypen in Felder uebertragen
+                //Spaltennamen und Spaltentypen in Felder übertragen
                 String[] resultColumnNames = new String[columnCount];
                 String[] resultColumnTypes = new String[columnCount];
                 for (int i = 0; i < columnCount; i++) {
@@ -79,10 +79,10 @@ public class DatabaseConnector {
                     resultColumnTypes[i] = resultset.getMetaData().getColumnTypeName(i + 1);
                 }
 
-                //Queue fuer die Zeilen der Ergebnistabelle erstellen
-                Queue<String[]> rows = new Queue<String[]>();
+                //Queue für die Zeilen der Ergebnistabelle erstellen
+                Queue<String[]> rows = new Queue<>();
 
-                //Daten in Queue uebertragen und Zeilen zaehlen
+                //Daten in Queue übertragen und Zeilen zählen
                 int rowCount = 0;
                 while (resultset.next()) {
                     String[] resultrow = new String[columnCount];
@@ -93,7 +93,7 @@ public class DatabaseConnector {
                     rowCount = rowCount + 1;
                 }
 
-                //Ergebnisfeld erstellen und Zeilen aus Queue uebertragen
+                //Ergebnisfeld erstellen und Zeilen aus Queue übertragen
                 String[][] resultData = new String[rowCount][columnCount];
                 int j = 0;
                 while (!rows.isEmpty()) {
@@ -107,7 +107,7 @@ public class DatabaseConnector {
                 currentQueryResult = new QueryResult(resultData, resultColumnNames, resultColumnTypes);
 
             } else { //Fall 2: Es gibt kein Ergebnis.
-                //Statement ohne Ergebnisobjekt schliessen
+                //Statement ohne Ergebnisobjekt schließen
                 statement.close();
             }
 
@@ -119,7 +119,7 @@ public class DatabaseConnector {
 
     /**
      * Die Anfrage liefert das Ergebnis des letzten mit der Methode executeStatement an
-     * die Datenbank geschickten SQL-Befehls als Ob-jekt vom Typ QueryResult zurueck.
+     * die Datenbank geschickten SQL-Befehls als Objekt vom Typ QueryResult zurück.
      * Wurde bisher kein SQL-Befehl abgeschickt oder ergab der letzte Aufruf von
      * executeStatement keine Ergebnismenge (z.B. bei einem INSERT-Befehl oder einem
      * Syntaxfehler), so wird null geliefert.
@@ -129,7 +129,7 @@ public class DatabaseConnector {
     }
 
     /**
-     * Die Anfrage liefert null oder eine Fehlermeldung, die sich jeweils auf die letzte zuvor ausgefuehrte
+     * Die Anfrage liefert null oder eine Fehlermeldung, die sich jeweils auf die letzte zuvor ausgeführte
      * Datenbankoperation bezieht.
      */
     public String getErrorMessage() {
