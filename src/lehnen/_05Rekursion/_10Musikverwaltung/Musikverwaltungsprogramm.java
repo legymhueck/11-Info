@@ -49,7 +49,7 @@ public class Musikverwaltungsprogramm {
     public boolean titelVorhanden(String pTitel, String pInterpret) {
         boolean gefunden = false;
         liste.toFirst();
-        while (liste.hasAccess() && gefunden == false) {
+        while (liste.hasAccess() && !gefunden) {
             Musiktitel mt = liste.getContent();
             if (mt.getTitel().equals(pTitel) && mt.getInterpret().equals(pInterpret)) {
                 gefunden = true;

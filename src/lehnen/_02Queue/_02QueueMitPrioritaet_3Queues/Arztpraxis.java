@@ -77,7 +77,7 @@ public class Arztpraxis {
 
             tmp.enqueue(p);
         }
-        // tmp-Queue wieder zurück in die leere Originalqueue kopieren
+        // tmp-Queue wieder zurück in die leere Original-Queue kopieren
         while (!tmp.isEmpty()) {
             Patient p = tmp.front();
             tmp.dequeue();

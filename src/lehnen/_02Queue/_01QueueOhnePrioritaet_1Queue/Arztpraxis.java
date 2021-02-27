@@ -9,19 +9,6 @@ public class Arztpraxis {
         warteSchlange = new Queue<>();
     }
 
-    public void test() {
-        patient_anmelden("Buhl", "Dorina", 1);
-        patient_anmelden("Krekelberg", "Arnold", 2);
-        patient_anmelden("Sanders-Edel", "Gundi", 3);
-        patient_anmelden("Schneider", "Felix", 1);
-
-        System.out.println("Die Warteschlange:");
-        print();
-
-        Patient p = patient_aufrufen();
-        System.out.println("\nDer nächste bitte: " + p.toString());
-    }
-
     public void patient_anmelden(String pVorname, String pNachname, int pPrioritaet) {
         Patient p = new Patient(pVorname, pNachname, pPrioritaet);
         warteSchlange.enqueue(p);
@@ -49,9 +36,9 @@ public class Arztpraxis {
             // Patient in die temporäre Warteschlange einfügen.
             tmp.enqueue(p);
         }
-        /**
+        /*
          * Nach der while-Schleife ist die Original-Queue leer und die tmp-Queue voll
-         * Die tmp-Queue wird wieder zurück in die leere Originalqueue kopiert
+         * Die tmp-Queue wird wieder zurück in die leere Original-Queue kopiert
          *
          */
         while (!tmp.isEmpty()) {
@@ -62,8 +49,20 @@ public class Arztpraxis {
     }
 
     public static void main(String[] args) {
-        Arztpraxis arztpraxis = new Arztpraxis();
-        arztpraxis.test();
+        new Arztpraxis().start();
+    }
+
+    public void start() {
+        patient_anmelden("Buhl", "Dorina", 1);
+        patient_anmelden("Krekelberg", "Arnold", 2);
+        patient_anmelden("Sanders-Edel", "Gundi", 3);
+        patient_anmelden("Schneider", "Felix", 1);
+
+        System.out.println("Die Warteschlange:");
+        print();
+
+        Patient p = patient_aufrufen();
+        System.out.println("\nDer nächste bitte: " + p.toString());
     }
 }
 
