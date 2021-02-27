@@ -17,14 +17,11 @@ import java.util.concurrent.*;
 
 public class MainView extends Application {
     private VBox root;
-    private HBox textFieldHBox;
-    private HBox buttonHBox;
-    private Scene scene;
-    private TextField[] textFieldArray;
-    private Board board;
-    private ExecutorService executor;
+    private final TextField[] textFieldArray;
+    private final Board board;
+    private final ExecutorService executor;
     private Runnable runnableTask;
-    boolean bIsIUpating;
+    boolean bIsUpdating;
 
     public MainView() {
         // GUI
@@ -33,13 +30,13 @@ public class MainView extends Application {
 
         // Business Logic
         board = new Board();
-        bIsIUpating = false;
+        bIsUpdating = false;
     }
 
     @Override
     public void start(Stage pStage) throws MalformedURLException {
         root = new VBox();
-        scene = new Scene(root, 600, 400, Color.BEIGE);
+        Scene scene = new Scene(root, 600, 400, Color.BEIGE);
 
         scene.getStylesheets().add(new URL(String.valueOf(getClass().getResource("styles.css"))).toExternalForm());
 
@@ -53,7 +50,7 @@ public class MainView extends Application {
     }
 
     public void createTextFields() {
-        textFieldHBox = new HBox();
+        HBox textFieldHBox = new HBox();
         textFieldHBox.getStyleClass().add("textFieldHBox");
         for (int i = 0; i < textFieldArray.length; i++) {
             textFieldArray[i] = createTextField(i);
@@ -68,34 +65,25 @@ public class MainView extends Application {
         // Button Permutationen
         Button b_permutations = new Button("Permutationen");
         b_permutations.setOnAction(event -> {
-            runnableTask = () -> displayPermutations();
+            runnableTask = this::displayPermutations;
             executor.submit(runnableTask);
         });
 
         // Button sortieren
         Button b_sortieren = new Button("sortieren");
-        b_sortieren.setOnAction(event -> {
-            sort();
-        });
+        b_sortieren.setOnAction(event -> sort());
 
         //Button Zufallszahlen erzeugen
         Button b_erzeugen = new Button("erzeugen");
-        b_erzeugen.setOnAction(event -> {
-            arrayFuellenUndDoppelteAussortieren();
-
-        });
+        b_erzeugen.setOnAction(event -> arrayFuellenUndDoppelteAussortieren());
 
         // Button lösen iterativ
         Button b_solve_iterative = new Button("lösen (iterativ)");
-        b_solve_iterative.setOnAction(event -> {
-            solve_iterative();
-        });
+        b_solve_iterative.setOnAction(event -> solve_iterative());
 
         // Button lösen rekursiv
         Button b_solve_recursive = new Button("lösen (rekursiv)");
-        b_solve_recursive.setOnAction(event -> {
-            solve_recursive();
-        });
+        b_solve_recursive.setOnAction(event -> solve_recursive());
 
         // Button Felder löschen
         Button b_clear = new Button("empty");
@@ -107,7 +95,7 @@ public class MainView extends Application {
 
 
         // ButtonBox
-        buttonHBox = new HBox();
+        HBox buttonHBox = new HBox();
         buttonHBox.getStyleClass().add("buttonHBox");
         buttonHBox.getChildren().addAll(b_permutations, b_erzeugen, b_solve_iterative, b_solve_recursive, b_sortieren, b_clear, b_exit);
 
@@ -148,8 +136,8 @@ public class MainView extends Application {
     }
 
     public void updateCell(int pIdx, int pValue) {
-        if (!bIsIUpating) {
-            bIsIUpating = true;
+        if (!bIsUpdating) {
+            bIsUpdating = true;
             TextField tf = textFieldArray[pIdx];
             if (pValue > 0) {
                 tf.setText(String.valueOf(pValue));
@@ -162,21 +150,19 @@ public class MainView extends Application {
 
             try {
                 Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            bIsIUpating = false;
+            bIsUpdating = false;
         }
     }
 
     public void updateView() {
 
         try {
-            if (!bIsIUpating) {
-                bIsIUpating = true;
+            if (!bIsUpdating) {
+                bIsUpdating = true;
 
                 for (int i = 0; i < textFieldArray.length; i++) {
                     int value = board.getValue(i);
@@ -198,13 +184,10 @@ public class MainView extends Application {
 
                 try {
                     Thread.sleep(100);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 } catch (Exception e) {
                     e.printStackTrace();
-
                 }
-                bIsIUpating = false;
+                bIsUpdating = false;
             }
         } catch (Exception e) {
             // just ignore it...
@@ -224,12 +207,12 @@ public class MainView extends Application {
             }
         }));
         textField.setId(String.valueOf(idx));
-        textField.setOnAction(this::onTextfieldChanged);
-        textField.setOnKeyReleased(this::onTextfieldChanged);
+        textField.setOnAction(this::onTextFieldChanged);
+        textField.setOnKeyReleased(this::onTextFieldChanged);
         return textField;
     }
 
-    private void onTextfieldChanged(Event event) {
+    private void onTextFieldChanged(Event event) {
         if (event.getSource().getClass() == TextField.class) {
             TextField tf = (TextField) event.getSource();
 
