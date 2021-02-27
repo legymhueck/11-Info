@@ -1,5 +1,5 @@
 package lehnen._02Queue._06Wiederholung_Marius;
-import lehnen._00Material._01NRW.Queue;
+import resources._01NRW._01Datenstrukturklassen._01Linear.Queue;
 
 public class Buero {
 

@@ -1,6 +1,6 @@
 package lehnen._06Sortieren._03SelectionSort._02MitScanner;
 
-import lehnen._00Material._01NRW.List;
+import resources._01NRW._01Datenstrukturklassen._01Linear.List;
 
 import java.util.Scanner;
 

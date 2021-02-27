@@ -1,6 +1,6 @@
 package lehnen._06Sortieren._03SelectionSort._01Basics;
 
-import lehnen._00Material._01NRW.List;
+import resources._01NRW._01Datenstrukturklassen._01Linear.List;
 
 public class SelectionSort {
     private List<Integer> liste = new List<>();

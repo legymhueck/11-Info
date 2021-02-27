@@ -1,6 +1,6 @@
 package lehnen._05Rekursion._10Musikverwaltung;
 
-import lehnen._00Material._01NRW.List;
+import resources._01NRW._01Datenstrukturklassen._01Linear.List;
 
 public class Musikverwaltungsprogramm {
     private List<Musiktitel> liste;
